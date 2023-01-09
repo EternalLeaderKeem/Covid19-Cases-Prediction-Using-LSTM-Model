@@ -177,8 +177,8 @@ plt.show()
 
 # %%
 # Error values of the predicted model
-print(mean_absolute_percentage_error(y_test_2, predicted_new_cases))
-print(mean_squared_error(y_test_2, predicted_new_cases))
+print('The MAPE is: ', mean_absolute_percentage_error(y_test_2, predicted_new_cases))
+print('The MSE is: ', mean_squared_error(y_test_2, predicted_new_cases))
 
 # %%
 # Model Analysis
