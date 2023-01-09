@@ -93,8 +93,8 @@ model.add(Dropout(0.1))
 model.add(Dense(1, activation='relu'))
 
 model.summary()
-
-keras.utils.plot_model(feature_extractor, show_shapes=True)
+#%%
+keras.utils.plot_model(model, show_shapes=True)
 
 #%%
 # Model compilation
