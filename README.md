@@ -5,7 +5,6 @@
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
 
 ### Summary
 This project is to train a model by using the cases malaysia train dataset of daily covid19 cases in Malaysia from 25th of January 2020 to 4th of December 2020 which later tested on the covid malaysia test dataset to see the accuracy of the model in making predictions. The goal of the project is to get an error of below 1% which sadly was not achieved as the lowest error is at 1.5%. Improvements on the model can still be done so that the target can be achieved.
