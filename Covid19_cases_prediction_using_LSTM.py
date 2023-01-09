@@ -94,6 +94,7 @@ model.add(Dense(1, activation='relu'))
 
 model.summary()
 #%%
+# Plot the model architecture
 keras.utils.plot_model(model, show_shapes=True)
 
 #%%
@@ -145,11 +146,13 @@ concatenated = concatenated[len(train_df['cases_new']) - window_size :]
 # min max transformation of the concatenated data
 concatenated = mms.transform(concatenated[::,None])
 
+# graph plot for the concatenated dataset
 plt.figure()
 plt.plot(concatenated)
 plt.show()
 
 # %%
+# Create an empty list for x and y
 x_test_2 = []
 y_test_2 = []
 
@@ -165,6 +168,7 @@ y_test_2 = np.array(y_test_2)
 predicted_new_cases = model.predict(x_test_2)
 
 #%%
+# Graph plot of predicted cases and actual cases
 plt.figure()
 plt.plot(predicted_new_cases, color='red')
 plt.plot(y_test_2, color='blue')
@@ -172,6 +176,7 @@ plt.legend(['Predicted', 'Actual'])
 plt.show()
 
 # %%
+# Error values of the predicted model
 print(mean_absolute_percentage_error(y_test_2, predicted_new_cases))
 print(mean_squared_error(y_test_2, predicted_new_cases))
 
@@ -183,7 +188,8 @@ y_test = np.argmax(y_test_2, axis=1)
 
 #%%
 # Classification report and confusion matrix
-print(classification_report(y_test, y_pred))
+print(classification_report(y_test_2, y_pred))
+
 cm = confusion_matrix(y_test, y_pred)
 ConfusionMatrixDisplay(cm)
 
@@ -195,7 +201,7 @@ disp.plot()
 
 model.save('covid cases prediction model.h5')
 
-#to save one hot encoder model
+#to save MinMaxScaler model
 with open('covid cases prediction mms.pkl', 'wb') as f:
     pickle.dump(mms, f)
 # %%
